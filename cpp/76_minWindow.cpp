@@ -1,5 +1,6 @@
 // https://leetcode.cn/problems/minimum-window-substring/
-
+// 滑动窗口题目
+// 目前仍存在的问题：当输入string过长时，会存在超时的问题。
 
 class Solution {
 public:
