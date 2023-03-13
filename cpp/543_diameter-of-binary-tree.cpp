@@ -1,5 +1,6 @@
 //https://leetcode.cn/problems/diameter-of-binary-tree/
 // 二叉树，递归的思路
+// 前序遍历 diameterOfBinaryTree + 后序遍历 maxDepth
 
 /**
  * Definition for a binary tree node.
