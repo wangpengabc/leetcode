@@ -8,7 +8,8 @@ public:
         //     return nums;
         // }
         // quick_sort(nums, 0, nums.size()-1);
-        merge_sort(nums, 0, nums.size()-1);
+//         merge_sort(nums, 0, nums.size()-1);
+        shell_sort(nums);
         return nums;
     }
 
@@ -78,6 +79,28 @@ public:
     // 希尔排序
     // Shell sort
     // Reference: https://www.runoob.com/data-structures/shell-sort.html
+    // 希尔排序
+    void shell_sort(vector<int>& nums) {
+
+        for (int gap=nums.size()/2; gap>=1; gap = gap/2) {
+
+            for (int i=gap; i<nums.size(); i++) {
+                int j = 0;
+                int tmp = nums[i];
+                for (j=i; j>=gap; j = j-gap) {
+                    if (j-gap >= 0) {
+                        if (nums[j-gap] <= tmp) {
+                            break;
+                        } else {
+                            nums[j] = nums[j-gap];
+                        }
+                    }
+                }
+                nums[j] = tmp;
+            }
+        }
+
+    }
 };
 
 // 堆排序
