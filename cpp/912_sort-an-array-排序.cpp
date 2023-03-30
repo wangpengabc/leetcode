@@ -74,6 +74,10 @@ public:
         quick_sort(nums, pivot_idx+1, right);
 
     }
+    
+    // 希尔排序
+    // Shell sort
+    // Reference: https://www.runoob.com/data-structures/shell-sort.html
 };
 
 // 堆排序
