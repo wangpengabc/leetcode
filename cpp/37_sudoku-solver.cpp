@@ -1,4 +1,5 @@
 // https://leetcode.cn/problems/sudoku-solver/
+// 回溯算法
 
 class Solution {
 public:
@@ -12,10 +13,13 @@ public:
 
 
     vector<vector<char>> origin_board;
+    vector<vector<char>> success_board;
     vector<char> candidates{'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+    bool sucess_flag = false;
     void solveSudoku(vector<vector<char>>& board) {
         origin_board = board;
         back_trace(board, 0);
+        board = success_board;
     }
 
     bool is_valid_row_col(vector<vector<char>>& board, int row, int col) {
@@ -44,7 +48,7 @@ public:
         for (int i=start_row; i<end_row; i++) {
             for (int j=start_col; j<end_col; j++) {
                 if (board[i][j] == board[row][col] && !(i==row && j==col)) {
-                        return false;
+                    return false;
                 }
             }
         }
@@ -57,16 +61,39 @@ public:
     }
     
     bool is_origin_filled(int row, int col) {
+        // cout << "origin : ------------- \n";
+        // print(origin_board);
+        // cout << "origin end ------------- \n";
+
         if (origin_board[row][col] == '.') {
-            return true;
-        } 
-        return false;
+            return false;
+        }
+        return true;
     }
 
     void back_trace(vector<vector<char>>& board, int idx) {
-
+        // cin.ignore();
+        if (sucess_flag) {
+            return;
+        }
+        // cout << "idx: " << idx << endl;
         if (idx > 80) {
+            int row_pre = (idx-1)/9;
+            int col_pre = (idx-1)%9;
+            if (is_valid(board, row_pre, col_pre)) {
+                sucess_flag = true;
+                success_board = board;
+            }
             return ;
+        }
+
+        if (idx > 0) {
+            int row_pre = (idx-1)/9;
+            int col_pre = (idx-1)%9;
+
+            if (!is_valid(board, row_pre, col_pre)) {
+                return ;
+            }
         }
 
         int row = idx/9;
@@ -74,13 +101,19 @@ public:
 
         // 如果是填过数的，跳过
         if (is_origin_filled(row, col)) {
+            // cout << "filled\n";
             back_trace(board, idx+1);
         } else {
             for (auto candidate : candidates) {
-                board[row][col] = candidate;
-                if (is_valid(board, row, col)) {
-                    back_trace(board, idx+1);
+                if (sucess_flag) {
+                    return ;
                 }
+                board[row][col] = candidate;
+                // cout << "valid" << "idx:" << idx << "row: " << row << "col: " << col << endl;
+                // print(board);
+                back_trace(board, idx+1);
+                board[row][col] = '.';
+                // board[row][col] = '.';
             }
         }
     }
