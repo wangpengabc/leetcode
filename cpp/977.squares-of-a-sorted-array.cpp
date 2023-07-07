@@ -1,4 +1,5 @@
 // https://leetcode.cn/problems/squares-of-a-sorted-array/
+// 双指针技巧
 
 class Solution {
 public:
