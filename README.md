@@ -5,7 +5,8 @@ LeetCode
 ## 图算法
 https://labuladong.github.io/algo/di-yi-zhan-da78c/shou-ba-sh-03a72/er-fen-tu--73400/  二分图判定， 二分图的应用，例如： 利用节点表示演员和电影，演员节点间没有连接，电影节点间也没有连接，那么这就是一个二分图。
 ![image](https://github.com/wangpengabc/leetcode/assets/22144608/78d6a378-29e2-4661-bff0-633d42d3bbca)
-![Uploading image.png…]()
+![image](https://github.com/wangpengabc/leetcode/assets/22144608/699d720f-4b35-4af2-b61d-f333eb2beed8)
+
 
 
 ### LeetCode
