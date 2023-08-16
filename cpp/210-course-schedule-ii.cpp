@@ -15,11 +15,11 @@ public:
             return {};
         } else {
             reverse(post_order.begin(), post_order.end());
-            vector<int> res(numCourses);
-            for (int i = 0; i < numCourses; i++) {
-                res[i] = post_order[i];
-            }
-            return res;
+            // vector<int> res(numCourses);
+            // for (int i = 0; i < numCourses; i++) {
+            //     res[i] = post_order[i];
+            // }
+            return post_order;
         }
     }
 
