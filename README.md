@@ -10,6 +10,12 @@ https://labuladong.github.io/algo/di-yi-zhan-da78c/shou-ba-sh-03a72/er-fen-tu--7
 ![image](https://github.com/wangpengabc/leetcode/assets/22144608/699d720f-4b35-4af2-b61d-f333eb2beed8)
 
 
+## 动态规划
+动态规划的整体实现思路： https://mp.weixin.qq.com/s/Cw39C9MY9Wr2JlcvBQZMcA ，  存在三种实现思路，自顶向下（dp函数，例如 最长公共子序列，https://mp.weixin.qq.com/s/ZhPEchewfc03xWv9VP3msg， 当然也可以采用dp数组自底向上的形式）、带备忘录的自顶向下、自底向上（dp数组，例如 最短编辑距离 https://labuladong.github.io/algo/di-er-zhan-a01c6/zi-xu-lie--6bc09/jing-dian--e5f5e/）
+![1692237438406](https://github.com/wangpengabc/leetcode/assets/22144608/c6a5cc2f-cfbf-4baf-9d35-99eae3736973)
+![1692237459236](https://github.com/wangpengabc/leetcode/assets/22144608/a0f1b980-ca30-45f7-97ff-38f4d8bf0b53)
+
+
 
 ### LeetCode
 
